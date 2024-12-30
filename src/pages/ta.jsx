@@ -60,7 +60,7 @@ const amenities = [
 const TherapeuticAmenities = () => {
   return (
     <div className="max-w-6xl text-center mt-4 mx-auto px-4 md:px-0 py-8 poppins-regular">
-      <h2 className="text-6xl font-serif mb-4 mt-14 text-[#49602f]">Therapeutic Amneties</h2>
+      <h2 className="md:text-6xl text-4xl font-serif mb-4 mt-14 text-[#49602f]">Therapeutic Amneties</h2>
       <div className="w-24 h-1 bg-[#49602f]/20 mx-auto mb-10"></div>
       {amenities.map((amenity, index) => (
         <div

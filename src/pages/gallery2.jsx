@@ -3,7 +3,7 @@ import React from 'react';
 const Gallery = () => {
   return (
     <div className="pt-24 text-center poppins-regular">
-      <h2 className="text-6xl font-serif mb-4 mt-14 text-[#49602f]">Moments in Motion</h2>
+      <h2 className="md:text-6xl text-4xl font-serif mb-4 mt-14 text-[#49602f]">Moments in Motion</h2>
       <div className="w-24 h-1 bg-[#49602f]/20 mx-auto"></div>
       <section className="grid sm:grid-cols-3 grid-cols-1 gap-4 p-8">
         {Array.from({ length: 24 }, (_, index) => (

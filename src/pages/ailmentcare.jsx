@@ -40,7 +40,7 @@ const AilmentCare = () => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="text-6xl font-serif mb-4 mt-14 text-[#49602f]">Ailment Care</h2>
+          <h2 className="md:text-6xl text-4xl font-serif mb-4 mt-14 text-[#49602f]">Ailment Care</h2>
           <div className="w-24 h-1 bg-[#49602f]/20 mx-auto"></div>
         </div>
 
