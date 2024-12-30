@@ -50,9 +50,9 @@ const Navbar = () => {
               className="p-2 focus:outline-none"
             >
               {mobileMenuOpen ? (
-                <X className="h-7 w-7" />
+                <X className="h-6 w-6" />
               ) : (
-                <Menu className="h-7 w-7" />
+                <Menu className="h-6 w-6" />
               )}
             </button>
           </div>
@@ -145,7 +145,6 @@ const Navbar = () => {
                 Services
               </Link>
             </li>
-            
             <li>
               <Link
                 to="/enquiry"
@@ -154,8 +153,6 @@ const Navbar = () => {
                 Book Now
               </Link>
             </li>
-
-            
           </ul>
         </div>
 
@@ -249,6 +246,15 @@ const Navbar = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/service"
+                className="block py-2 hover:text-[#f8af4b] transition duration-300"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Services
               </Link>
             </li>
             <li className="pt-2">
