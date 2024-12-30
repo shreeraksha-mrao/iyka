@@ -133,7 +133,7 @@ const EnquiryForm = () => {
             name="checkin"
             value={checkin}
             className="w-full px-3 py-2 border rounded-md bg-gray-200"
-            readOnly
+            
           />
         </div>
 
@@ -144,7 +144,7 @@ const EnquiryForm = () => {
             name="checkout"
             value={checkout}
             className="w-full px-3 py-2 border rounded-md bg-gray-200"
-            readOnly
+            
           />
         </div>
 
