@@ -52,7 +52,7 @@ const Review = () => {
         <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-gray-700">
           Hear from Our Guests
         </h2>
-        <div className="relative bg-white bg-opacity-80 text-gray-800 rounded-lg shadow-lg p-28">
+        <div className="relative bg-white bg-opacity-80 text-gray-800 rounded-lg shadow-lg md:p-28 p-10">
           <p className="text-lg mb-4 italic">"{reviews[currentReview].text}"</p>
           <h4 className="text-lg font-bold">
             - {reviews[currentReview].name}

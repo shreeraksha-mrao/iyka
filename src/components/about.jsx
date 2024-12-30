@@ -9,7 +9,7 @@ const sections = [
   },
   {
     id: "strengthen-sustain",
-    title: "  A Sanctuary for Holistic Healing",
+    title: "A Sanctuary for Holistic Healing",
     description:
       "Discover a nurturing sanctuary where cutting-edge research and evidence-based approaches converge to support your physical, mental, and emotional well-being, fostering a path to lasting health and harmony.",
     background: "bg-[url('/images/2.jpg')]",
@@ -42,30 +42,32 @@ const About = () => {
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full">
         {/* Title Section */}
-        <div className="text-center mb-14">
-          <h1 className="text-2xl md:text-3xl font-bold text-white p-10 poppins-regular" >
-          IYKA-Aram: The Union of Human Body and Spirit in Livelihood and Movement
+        <div className="text-center mb-14 hidden sm:block">
+          <h1 className="text-2xl md:text-3xl font-bold text-white p-10 poppins-regular">
+            IYKA-Aram: The Union of Human Body and Spirit in Livelihood and Movement
           </h1>
         </div>
 
         {/* Sections Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 max-w-6xl justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full sm:w-11/12 max-w-6xl px-4 sm:px-0 justify-center">
           {sections.map((section, index) => (
             <div
               key={section.id}
-              className={`p-6 border rounded-lg transition-transform duration-300 flex flex-col justify-center items-center ${
+              className={`p-6 border rounded-lg transition-transform duration-300 flex flex-col justify-center items-center mx-auto ${
                 index === currentSection
                   ? "bg-white shadow-lg transform scale-105"
                   : "bg-gray-100 opacity-75"
               }`}
             >
               <h2
-                className={`text-xl font-semibold text-center mb-2 ${index !== currentSection ? "mt-auto mb-auto" : ""}`}
+                className={`text-sm sm:text-xl font-semibold text-center mb-2 ${
+                  index !== currentSection ? "mt-auto mb-auto" : ""
+                }`}
               >
                 {section.title}
               </h2>
               {index === currentSection && (
-                <p className="text-sm text-center">{section.description}</p>
+                <p className="text-xs sm:text-sm text-center">{section.description}</p>
               )}
             </div>
           ))}

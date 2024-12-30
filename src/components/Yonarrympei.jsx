@@ -35,23 +35,23 @@ const Yonarrympei = () => {
 
   return (
     <div>
-      <div className="flex flex-col gap-14 md:flex-row items-center max-w-6xl mx-auto mt-24 px-4 md:px-0 mb-10">
+      <div className="flex flex-col gap-6 sm:gap-14 md:flex-row items-center max-w-6xl mx-auto mt-12 sm:mt-24 px-2 sm:px-4 md:px-0 mb-8 sm:mb-10">
         {/* Image Section */}
-        <div className="md:w-1/3 mb-14 md:mb-0 md:mr-8">
+        <div className="md:w-1/3 mb-8 sm:mb-14 md:mb-0 md:mr-8">
           <img
             src="/images/y.png"
             alt="Yonarrympei Concept"
-            className=" shadow-md w-full object-cover"
+            className="shadow-md w-full object-cover"
           />
         </div>
 
         {/* Text Section */}
         <div className="md:w-2/3">
-          <p className="text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
+          <p className="text-sm sm:text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
             <strong>Yonarrympei</strong> is a transformative healing concept that integrates Yoga
             Therapy, Gut Health, and Nutrition to{" "}
             <strong>
-              <span className="text-[#49602f] tet">
+              <span className="text-[#49602f]">
                 restore and sustain physical, mental, emotional, and spiritual well-being.
               </span>
             </strong>{" "}
@@ -65,47 +65,43 @@ const Yonarrympei = () => {
         </div>
       </div>
 
-      <div className="relative h-screen w-full poppins-regular mb-10">
+      <div className="relative h-screen w-full poppins-regular mb-8 sm:mb-10">
         <div
-          className={`absolute inset-0 transition-all duration-1000 ${sections[currentSection].background} bg-cover bg-center `}
+          className={`absolute inset-0 transition-all duration-1000 ${sections[currentSection].background} bg-cover bg-center`}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight p-10">
-            IYKA-Aram: A Fusion of Livelihood, Movement, and Well-being
-          </h1>
-
           {/* Sections Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 max-w-6xl justify-center">
+          <div className="grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 w-11/12 max-w-6xl justify-center">
             {sections.map((section, index) => (
               <div
                 key={section.id}
-                className={`p-6 border  transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
+                className={`p-4 sm:p-6 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
                   index === currentSection
                     ? "bg-white transform scale-105"
                     : "bg-gray-100 opacity-75"
                 }`}
               >
                 <h2
-                  className={`text-xl font-semibold mb-4 ${
+                  className={`text-sm sm:text-xl font-semibold mb-2 sm:mb-4 ${
                     index !== currentSection ? "text-gray-700" : "text-black"
                   }`}
                 >
                   {section.title}
                 </h2>
                 {index === currentSection && (
-                  <p className="text-sm text-center text-gray-800">{section.description}</p>
+                  <p className="text-xs md:text-sm text-center text-gray-800">{section.description}</p>
                 )}
               </div>
             ))}
           </div>
         </div>
-        <div className="absolute bottom-6 flex justify-center gap-3 w-full">
+        <div className="absolute bottom-4 sm:bottom-6 flex justify-center gap-2 sm:gap-3 w-full">
           {sections.map((_, index) => (
             <button
               key={index}
-              className={`w-4 h-4 rounded-full transition-colors duration-300 ${
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-colors duration-300 ${
                 index === currentSection ? "bg-white" : "bg-gray-500"
               }`}
               onClick={() => setCurrentSection(index)}

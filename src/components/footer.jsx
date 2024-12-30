@@ -21,28 +21,25 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">SOCIAL MEDIA</h3>
           <div className="flex space-x-4 mb-4">
-            <a href="#" className="hover:text-gray-500"><i className="fab fa-facebook"></i></a>
-            <a href="#" className="hover:text-gray-500"><i className="fab fa-instagram"></i></a>
-            <a href="#" className="hover:text-gray-500"><i className="fab fa-youtube"></i></a>
-            <a href="#" className="hover:text-gray-500"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="hover:text-gray-500"><i className="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/yona.wellness/" className="hover:text-gray-500"><i className="fab fa-instagram"></i></a>
           </div>
-          <p>Contact Us: <a href="tel:7625043800" className="hover:underline">7625043800 / 802</a></p>
-          <p>Enquiry: <a href="tel:8047645555" className="hover:underline">8047645555</a></p>
-          <p>Mail: <a href="mailto:info@iyka-aram.com" className="hover:underline">info@iyka-aram.com</a></p>
+          <p>Contact Us: <a href="tel:7625043800" className="hover:underline">6009696208</a></p>
+          <p>Enquiry: <a href="tel:8047645555" className="hover:underline">6009696208</a></p>
+          <p>Mail: <a href="mailto:info@iyka-aram.com" className="hover:underline text-xs sm:text-base">yonawellnessandhealthcare@gmail.com
+</a></p>
         </div>
 
         {/* Address Section */}
         <div>
           <h3 className="text-lg font-semibold mb-4">ADDRESS</h3>
           <p>
-            Iyka-Aram, Integrative Wellness Center,<br />
-            XYZ Road, Near ABC Landmark,<br />
-            Cityname, State - 560001
+            Iyka-Aram Wellness Center<br />
+            HV89+8Q4,Gate-1 New, Kench's Trace, Laban,<br />
+            Bishnupur, Shillong, Meghalaya 793004
           </p>
           <div className="mt-4">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115150.53539078412!2d91.81003496049944!3d25.589818298708614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37507e8f34bd207f%3A0x62482df7108f882b!2sShillong%2C%20Meghalaya!5e0!3m2!1sen!2sin!4v1735276494047!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.1774480323397!2d91.86945310000002!3d25.565762499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37507f006ea4c30f%3A0x1755efba31561695!2sIYKA-Aram%20Wellness%20and%20Healthcare!5e0!3m2!1sen!2sin!4v1735454777925!5m2!1sen!2sin"
               width="100%"
               height="150"
               style={{ border: "0" }}

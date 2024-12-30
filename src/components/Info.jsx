@@ -5,7 +5,7 @@ const Info = () => {
     <div className="bg-beige-100 text-gray-800 font-sans p-10 mb-10">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 p-24">Discover a Haven of Holistic Healing at <span className='text-[#49602f]'>Iyka-Aram</span></h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 p-4 sm:p-24">Discover a Haven of Holistic Healing at <span className='text-[#49602f]'>Iyka-Aram</span></h2>
         </div>
         <div className="lg:w-1/2 mt-6 lg:mt-0">
 

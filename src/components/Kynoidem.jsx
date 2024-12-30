@@ -45,36 +45,37 @@ const Kynoidem = () => {
   return (
     <div>
       {/* Flex Container for Image and Description */}
-      <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto mt-24 px-4 md:px-0 gap-14 mb-10">
+      <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto mt-16 px-4 gap-8 md:gap-14 mb-12">
         {/* Image Section */}
-        <div className="md:w-1/3 mb-8 md:mb-0 md:mr-8">
+        <div className="w-full md:w-1/3">
           <img
             src="/images/k.png" // Replace with your image path
             alt="Kynoidem Concept"
-            className=" shadow-md w-full object-cover"
+            className="shadow-md w-full object-cover rounded-lg"
           />
         </div>
 
         {/* Text Section */}
-        <div className="md:w-2/3">
-          <p className="text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
+        <div className="w-full md:w-2/3">
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
             <strong>Kynoidem</strong> is an integrative sleep medicine concept focused on improving
             sleep quality and restoring hormonal balance through a combination of modern techniques
             and traditional therapies. Using a holistic approach rooted in circadian rhythms,
-            Kynodiem enhances sleep through methods like{" "}
+            Kynodiem enhances sleep through methods like {" "}
             <strong>
-              <span className="text-[#49602f] tet">Aromatherapy</span>
+              <span className="text-[#49602f]">Aromatherapy</span>
             </strong>
-            ,{" "}
+            , {" "}
             <strong>
-              <span className="text-[#49602f] tet">Acupressure</span>
+              <span className="text-[#49602f]">Acupressure</span>
             </strong>
-            ,{" "}
+            , {" "}
             <strong>
-              <span className="text-[#49602f] tet">Cognitive Behavioral Therapy for Insomnia</span>
+              <span className="text-[#49602f]">Cognitive Behavioral Therapy for Insomnia</span>
             </strong>
+            , and {" "}
             <strong>
-              <span className="text-[#49602f] tet">, and Virtual Reality headsets</span>
+              <span className="text-[#49602f]">Virtual Reality headsets</span>
             </strong>
             . These techniques work together to help individuals achieve restorative, regenerative
             sleep, leading to better health, relaxation, and overall well-being.
@@ -82,37 +83,37 @@ const Kynoidem = () => {
         </div>
       </div>
 
-      <div className="relative h-screen w-full poppins-regular mb-10">
+      <div className="relative h-[75vh] w-full poppins-regular mb-10">
         <div
-          className={`absolute inset-0 transition-all duration-1000 ${sections[currentSection].background} bg-cover bg-center `}
+          className={`absolute inset-0 transition-all duration-1000 ${sections[currentSection].background} bg-cover bg-center`}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight p-10">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight px-4 md:px-10">
             KYNOIDEM: Restoring the Power of Sleep
           </h1>
 
           {/* Sections Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 max-w-6xl justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-11/12 max-w-6xl justify-center mt-8">
             {sections.map((section, index) => (
               <div
                 key={section.id}
-                className={`p-6 border  transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
+                className={`p-4 md:p-6 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg rounded-lg ${
                   index === currentSection
                     ? "bg-white transform scale-105"
                     : "bg-gray-100 opacity-75"
-                } ${section.id === "vr-headsets" ? "lg:col-span-4" : ""}`} // Center VR section
+                }`}
               >
                 <h2
-                  className={`text-xl font-semibold mb-4 ${
+                  className={`text-lg md:text-xl font-semibold mb-3 ${
                     index !== currentSection ? "text-gray-700" : "text-black"
                   }`}
                 >
                   {section.title}
                 </h2>
                 {index === currentSection && (
-                  <p className="text-sm text-center text-gray-800">
+                  <p className="text-sm md:text-base text-center text-gray-800">
                     {section.description}
                   </p>
                 )}
@@ -120,11 +121,11 @@ const Kynoidem = () => {
             ))}
           </div>
         </div>
-        <div className="absolute bottom-6 flex justify-center gap-3 w-full">
+        <div className="absolute bottom-4 flex justify-center gap-2 w-full">
           {sections.map((_, index) => (
             <button
               key={index}
-              className={`w-4 h-4 rounded-full transition-colors duration-300 ${
+              className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-colors duration-300 ${
                 index === currentSection ? "bg-white" : "bg-gray-500"
               }`}
               onClick={() => setCurrentSection(index)}

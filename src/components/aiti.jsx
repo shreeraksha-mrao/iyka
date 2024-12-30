@@ -37,7 +37,7 @@ const Aiti = () => {
           <img
             src="/images/a.png" // Replace with your desired image path
             alt="AITI Therapy"
-            className=" shadow-md w-full object-cover"
+            className="shadow-md w-full object-cover"
           />
         </div>
 
@@ -68,10 +68,6 @@ const Aiti = () => {
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight p-10">
-            AITI: Integrating Ancient Healing with Modern Therapy
-          </h1>
-
           {/* Sections Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-11/12 max-w-6xl justify-center">
             {sections.map((section, index) => (

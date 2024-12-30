@@ -35,7 +35,7 @@ const AilmentCare = () => {
   return (
     <section 
       id="ailment-care" 
-      className="py-16 px-4 bg-stone-50 bg-cover bg-center bg-repeat-y lg:overflow-hidden h-screen poppins-regular " 
+      className="flex items-center py-16 px-4 bg-stone-50 bg-cover bg-center bg-repeat-y lg:overflow-hidden sm:h-screen poppins-regular " 
       style={{ backgroundImage: 'url(/images/wall.jpg)' }}
     >
       <div className="max-w-6xl mx-auto">
