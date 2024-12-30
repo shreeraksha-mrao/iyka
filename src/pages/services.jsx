@@ -11,13 +11,13 @@ const services = [
     title: "Online Yoga Classes",
     description:
       "Join live, interactive yoga classes led by certified instructors. Improve flexibility, balance, and mindfulness with sessions designed for all skill levels, all from the convenience of your home.",
-    image: "/images/online-yoga.jpg", // Replace with your actual image path
+    image: "/images/gallery/yoga6.jpg", // Replace with your actual image path
   },
   {
     title: "Offline Yoga Classes",
     description:
       "Experience the benefits of in-person yoga practice. Our offline yoga classes provide a community atmosphere, hands-on guidance, and a serene environment for holistic growth.",
-    image: "/images/offline-yoga.jpg", // Replace with your actual image path
+    image: "/images/gallery/img11.jpg", // Replace with your actual image path
   },
 ];
 

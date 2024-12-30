@@ -139,7 +139,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/services"
+                to="/service"
                 className="hover:text-[#f8af4b] transition duration-300"
               >
                 Services

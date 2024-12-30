@@ -11,7 +11,12 @@ const EnquiryForm = () => {
     email: '',
     contact: '',
     address: '',
-    message: ''
+    message: '',
+    preferences: {
+      onlineConsultation: false,
+      onlineYoga: false,
+      offlineYoga: false,
+    },
   });
 
   const handleSubmit = (e) => {
@@ -19,39 +24,60 @@ const EnquiryForm = () => {
 
     // Send form data to EmailJS
     emailjs.sendForm(
-      'service_10oro8e',  // Replace with your EmailJS service ID
-      'template_5v2fcen',  // Replace with your EmailJS template ID
+      'service_mqflhdj', // Replace with your EmailJS service ID
+      'template_umoqdha', // Replace with your EmailJS template ID
       form.current,
-      'pIwbEgpQXULwVV36l' // Replace with your EmailJS user ID
+      '5FaW_1CWe9hGNIRti' // Replace with your EmailJS user ID
     )
-    .then((response) => {
-      alert('Your enquiry has been submitted successfully!');
-      // Reset form data after successful submission
-      setData({ name: '', email: '', contact: '', address: '', message: '' });
-      form.current.reset();
-    })
-    .catch((error) => {
-      console.error('Error sending email:', error);
-      alert('An error occurred while submitting the form. Please try again.');
-    });
+      .then((response) => {
+        alert('Your enquiry has been submitted successfully!');
+        // Reset form data after successful submission
+        setData({
+          name: '',
+          email: '',
+          contact: '',
+          address: '',
+          message: '',
+          preferences: {
+            onlineConsultation: false,
+            onlineYoga: false,
+            offlineYoga: false,
+          },
+        });
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        alert('An error occurred while submitting the form. Please try again.');
+      });
   };
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setData((prevData) => ({
+        ...prevData,
+        preferences: {
+          ...prevData.preferences,
+          [name]: checked,
+        },
+      }));
+    } else {
+      setData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div className="flex pt-24 flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
       <form
         ref={form}
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-lg shadow-md w-96"
+        className="bg-white p-6 rounded-lg shadow-md w-full max-w-md"
       >
-        <h2 className="text-xl font-bold mb-4">Enquiry Form</h2>
+        <h2 className="text-xl font-bold mb-4 text-center">Enquiry Form</h2>
 
         <div className="mb-4">
           <label className="block text-sm font-medium mb-1">Name</label>
@@ -106,8 +132,8 @@ const EnquiryForm = () => {
             type="date"
             name="checkin"
             value={checkin}
-            
             className="w-full px-3 py-2 border rounded-md bg-gray-200"
+            readOnly
           />
         </div>
 
@@ -117,8 +143,8 @@ const EnquiryForm = () => {
             type="date"
             name="checkout"
             value={checkout}
-            
             className="w-full px-3 py-2 border rounded-md bg-gray-200"
+            readOnly
           />
         </div>
 
@@ -131,6 +157,40 @@ const EnquiryForm = () => {
             required
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           ></textarea>
+        </div>
+
+        <div className="mb-4">
+          <h3 className="text-sm font-medium mb-2">Preferences</h3>
+          <div className="flex items-center mb-2">
+            <input
+              type="checkbox"
+              name="onlineConsultation"
+              checked={data.preferences.onlineConsultation}
+              onChange={handleInputChange}
+              className="mr-2"
+            />
+            <label>Online Consultation</label>
+          </div>
+          <div className="flex items-center mb-2">
+            <input
+              type="checkbox"
+              name="onlineYoga"
+              checked={data.preferences.onlineYoga}
+              onChange={handleInputChange}
+              className="mr-2"
+            />
+            <label>Online Yoga</label>
+          </div>
+          <div className="flex items-center mb-2">
+            <input
+              type="checkbox"
+              name="offlineYoga"
+              checked={data.preferences.offlineYoga}
+              onChange={handleInputChange}
+              className="mr-2"
+            />
+            <label>Offline Yoga</label>
+          </div>
         </div>
 
         <button
