@@ -22,7 +22,7 @@ const sections = [
   },
 ];
 
-const Yonarrympei = () => {
+const Yonarympei = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Yonarrympei = () => {
         <div className="md:w-1/3 mb-8 sm:mb-14 md:mb-0 md:mr-8">
           <img
             src="/images/y.png"
-            alt="Yonarrympei Concept"
+            alt="Yonarympei Concept"
             className="shadow-md w-full object-cover"
           />
         </div>
@@ -48,7 +48,7 @@ const Yonarrympei = () => {
         {/* Text Section */}
         <div className="md:w-2/3">
           <p className="text-sm sm:text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
-            <strong>Yonarrympei</strong> is a transformative healing concept that integrates Yoga
+            <strong>Yonarympei</strong> is a transformative healing concept that integrates Yoga
             Therapy, Gut Health, and Nutrition to{" "}
             <strong>
               <span className="text-[#49602f]">
@@ -57,7 +57,7 @@ const Yonarrympei = () => {
             </strong>{" "}
             Rooted in both ancient practices and modern science, it emphasizes the
             interconnectedness of mind, body, and spirit. Through personalized yoga, nutrition, and
-            gut health interventions, Yonarrympei offers a holistic approach to wellness, promoting
+            gut health interventions, Yonarympei offers a holistic approach to wellness, promoting
             balance and vitality. Whether managing specific health conditions or enhancing overall
             vitality, it empowers individuals to achieve optimal well-being naturally and
             sustainably.
@@ -113,4 +113,4 @@ const Yonarrympei = () => {
   );
 };
 
-export default Yonarrympei;
+export default Yonarympei;

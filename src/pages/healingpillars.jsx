@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Aiti from '../components/aiti';
 import Kynoidem from '../components/Kynoidem';
-import Yonarrympei from '../components/Yonarrympei';
+import Yonarympei from '../components/Yonarympei';
 
 const HealingPillars = () => {
   const location = useLocation();
@@ -22,7 +22,7 @@ const HealingPillars = () => {
       {/* Display the active section */}
       {activeSection === 'aiti' && <Aiti />}
       {activeSection === 'kynoidem' && <Kynoidem />}
-      {activeSection === 'yonarrympei' && <Yonarrympei />}
+      {activeSection === 'yonarympei' && <Yonarympei />}
 
       {/* If no section is selected */}
       {!activeSection && (

@@ -1,12 +1,35 @@
 import React, { useRef, useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const form = useRef();
   const [data, setData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID", // Replace with your Email.js service ID
+        "YOUR_TEMPLATE_ID", // Replace with your Email.js template ID
+        form.current,
+        "YOUR_USER_ID" // Replace with your Email.js user ID
+      )
+      .then(
+        (result) => {
+          setStatus("Message sent successfully!");
+          setData({ name: "", email: "", message: "" }); // Reset form
+        },
+        (error) => {
+          setStatus("Failed to send message. Please try again later.");
+        }
+      );
+  };
 
   return (
-    <section className=" pt-24 poppins-regular" id="Contact">
+    <section className="pt-24 poppins-regular" id="Contact">
       <div className="contact text-center max-w-[90%] mx-auto">
         <h2 className="text-4xl sm:text-6xl font-serif mb-4 text-[#49602f]">
           Contact Us
@@ -52,7 +75,7 @@ const Contact = () => {
 
         {/* Contact Form Section */}
         <div className="contactForm w-full sm:w-[50%] bg-transparent px-6 py-6 sm:px-10 sm:py-10">
-          <form action="#" method="POST" ref={form}>
+          <form ref={form} onSubmit={handleSubmit}>
             <h2 className="text-black text-xl sm:text-2xl mb-4">
               Feedback or Queries
             </h2>
@@ -60,7 +83,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
-                required="required"
+                required
                 value={data.name}
                 onChange={(e) => setData({ ...data, name: e.target.value })}
                 placeholder="Full Name"
@@ -71,7 +94,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
-                required="required"
+                required
                 value={data.email}
                 onChange={(e) => setData({ ...data, email: e.target.value })}
                 placeholder="Email Address"
@@ -81,6 +104,7 @@ const Contact = () => {
             <div className="inputBox mt-4">
               <textarea
                 name="message"
+                required
                 value={data.message}
                 onChange={(e) => setData({ ...data, message: e.target.value })}
                 placeholder="Message"
@@ -91,11 +115,11 @@ const Contact = () => {
               <input
                 type="submit"
                 value="Send"
-                name="submit"
                 className="w-full sm:w-1/2 py-2 bg-black text-white border-2 border-white cursor-pointer hover:bg-[#49602f] hover:text-white transition"
               />
             </div>
           </form>
+          {status && <p className="mt-4 text-sm">{status}</p>}
         </div>
       </div>
     </section>

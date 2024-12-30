@@ -80,10 +80,10 @@ const Navbar = () => {
                 <ul>
                   <li>
                     <Link
-                      to="/healing-pillars#yonarrympei"
+                      to="/healing-pillars#yonarympei"
                       className="block px-4 py-2 hover:bg-[#f8af4b] hover:text-white transition duration-300"
                     >
-                      Yonarrympei
+                      Yonarympei
                     </Link>
                   </li>
                   <li>
@@ -184,11 +184,11 @@ const Navbar = () => {
                 <ul className="pl-4 mt-2 space-y-2">
                   <li>
                     <Link
-                      to="/healing-pillars#yonarrympei"
+                      to="/healing-pillars#yonarympei"
                       className="block py-2 hover:text-[#f8af4b] transition duration-300"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Yonarrympei
+                      Yonarympei
                     </Link>
                   </li>
                   <li>
