@@ -10,6 +10,7 @@ import TherapeuticAmenities from './pages/ta';
 import Footer from './components/footer';
 import Gallery from './pages/gallery2';
 import Contact from './pages/contact';
+import Service from './pages/services';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/therapeutic-amenities" element={<TherapeuticAmenities />}/>
         <Route path="/gallery" element={<Gallery />}/>
         <Route path="/contact" element={<Contact />}/>
+        <Route path="/service" element={<Service />}/>
       </Routes>
       <Footer />
     </Router>

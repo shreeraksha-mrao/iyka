@@ -139,12 +139,23 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+                to="/services"
+                className="hover:text-[#f8af4b] transition duration-300"
+              >
+                Services
+              </Link>
+            </li>
+            
+            <li>
+              <Link
                 to="/enquiry"
                 className="bg-[#49602f] text-white px-4 py-2 rounded-md shadow hover:bg-[#e09a43] transition duration-300"
               >
                 Book Now
               </Link>
             </li>
+
+            
           </ul>
         </div>
 
