@@ -50,9 +50,9 @@ const Navbar = () => {
               className="p-2 focus:outline-none"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-7 w-7" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-7 w-7" />
               )}
             </button>
           </div>
