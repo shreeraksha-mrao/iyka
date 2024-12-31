@@ -1,10 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EnquiryForm = () => {
   const location = useLocation();
-  const { checkin, checkout } = location.state || {};
+  const { checkin } = location.state || {};
   const form = useRef();
   const [data, setData] = useState({
     name: '',
@@ -22,16 +24,22 @@ const EnquiryForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Send form data to EmailJS
-    emailjs.sendForm(
-      'service_mqflhdj', // Replace with your EmailJS service ID
-      'template_umoqdha', // Replace with your EmailJS template ID
-      form.current,
-      '5FaW_1CWe9hGNIRti' // Replace with your EmailJS user ID
-    )
-      .then((response) => {
-        alert('Your enquiry has been submitted successfully!');
-        // Reset form data after successful submission
+    toast.info('Sending your enquiry, please wait...', {
+      position: 'top-center',
+      autoClose: false,
+      toastId: 'sendingToast', // Unique ID to prevent duplicate toasts
+    });
+
+    emailjs
+      .sendForm(
+        'service_mqflhdj', // Replace with your EmailJS service ID
+        'template_umoqdha', // Replace with your EmailJS template ID
+        form.current,
+        '5FaW_1CWe9hGNIRti' // Replace with your EmailJS user ID
+      )
+      .then(() => {
+        toast.dismiss('sendingToast'); // Dismiss the "sending" toast
+        toast.success('Your enquiry has been submitted successfully!');
         setData({
           name: '',
           email: '',
@@ -46,9 +54,9 @@ const EnquiryForm = () => {
         });
         form.current.reset();
       })
-      .catch((error) => {
-        console.error('Error sending email:', error);
-        alert('An error occurred while submitting the form. Please try again.');
+      .catch(() => {
+        toast.dismiss('sendingToast'); // Dismiss the "sending" toast
+        toast.error('An error occurred while submitting the form. Please try again.');
       });
   };
 
@@ -72,6 +80,7 @@ const EnquiryForm = () => {
 
   return (
     <div className="flex pt-24 flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
+      <ToastContainer />
       <form
         ref={form}
         onSubmit={handleSubmit}
@@ -133,18 +142,6 @@ const EnquiryForm = () => {
             name="checkin"
             value={checkin}
             className="w-full px-3 py-2 border rounded-md bg-gray-200"
-            
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">Check-out Date</label>
-          <input
-            type="date"
-            name="checkout"
-            value={checkout}
-            className="w-full px-3 py-2 border rounded-md bg-gray-200"
-            
           />
         </div>
 

@@ -5,19 +5,18 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const BookNow = () => {
   const [checkin, setCheckin] = useState('');
-  const [checkout, setCheckout] = useState('');
   const navigate = useNavigate();
 
   const handleBookNow = () => {
-    if (!checkin || !checkout) {
-      toast.error('Please select both check-in and check-out dates.', {
+    if (!checkin) {
+      toast.error('Please select a check-in date.', {
         position: 'top-center',
         autoClose: 3000,
       });
       return;
     }
 
-    navigate('/enquiry', { state: { checkin, checkout } });
+    navigate('/enquiry', { state: { checkin } });
   };
 
   const getMinDate = () => {
@@ -40,16 +39,6 @@ const BookNow = () => {
             value={checkin}
             onChange={(e) => setCheckin(e.target.value)}
             min={getMinDate()} // Disable past dates
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-        </div>
-        <div className="w-full md:w-auto">
-          <label className="block text-white text-sm font-medium mb-1">Check-out Date</label>
-          <input
-            type="date"
-            value={checkout}
-            onChange={(e) => setCheckout(e.target.value)}
-            min={checkin || getMinDate()} // Ensure check-out is after check-in
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
