@@ -32,6 +32,18 @@ const Contact = () => {
       );
   };
 
+  // Handle phone related action (toast should be smaller)
+  const handlePhoneSubmit = (e) => {
+    e.preventDefault();
+    toast.info("Phone query received, someone will get in touch soon.", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeButton: false,
+      className: "text-xs", // Smaller text for phone-related toast
+    });
+  };
+
   return (
     <section className="pt-24 poppins-regular" id="Contact">
       <div className="contact text-center max-w-[90%] mx-auto">
@@ -74,6 +86,8 @@ const Contact = () => {
               <h3 className="font-semibold text-base sm:text-lg">Phone</h3>
               <p className="text-sm sm:text-base">+91 6009696208</p>
             </div>
+            {/* Trigger phone submit with custom toast */}
+            
           </div>
         </div>
 

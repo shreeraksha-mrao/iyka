@@ -45,9 +45,9 @@ const Kynoidem = () => {
   return (
     <div>
       {/* Flex Container for Image and Description */}
-      <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto mt-16 px-4 gap-8 md:gap-14 mb-12">
+      <div className="flex flex-col gap-6 sm:gap-14 md:flex-row items-center max-w-6xl mx-auto mt-12 sm:mt-24 px-2 sm:px-4 md:px-0 mb-8 sm:mb-10">
         {/* Image Section */}
-        <div className="w-full md:w-1/3">
+        <div className="md:w-1/3 mb-8 md:mb-0 md:mr-8">
           <img
             src="/images/k.png" // Replace with your image path
             alt="Kynoidem Concept"
@@ -56,24 +56,24 @@ const Kynoidem = () => {
         </div>
 
         {/* Text Section */}
-        <div className="w-full md:w-2/3">
-          <p className="text-base md:text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
+        <div className="md:w-2/3">
+          <p className="text-sm sm:text-lg px-4 text-gray-700 leading-relaxed poppins-regular text-justify">
             <strong>Kynoidem</strong> is an integrative sleep medicine concept focused on improving
             sleep quality and restoring hormonal balance through a combination of modern techniques
             and traditional therapies. Using a holistic approach rooted in circadian rhythms,
-            Kynodiem enhances sleep through methods like {" "}
+            Kynodiem enhances sleep through methods like{" "}
             <strong>
               <span className="text-[#49602f]">Aromatherapy</span>
             </strong>
-            , {" "}
+            ,{" "}
             <strong>
               <span className="text-[#49602f]">Acupressure</span>
             </strong>
-            , {" "}
+            ,{" "}
             <strong>
               <span className="text-[#49602f]">Cognitive Behavioral Therapy for Insomnia</span>
             </strong>
-            , and {" "}
+            , and{" "}
             <strong>
               <span className="text-[#49602f]">Virtual Reality headsets</span>
             </strong>
@@ -83,7 +83,8 @@ const Kynoidem = () => {
         </div>
       </div>
 
-      <div className="relative h-[75vh] w-full poppins-regular mb-10">
+      {/* Background Image & Sections */}
+      <div className="relative lg:h-[75vh] w-full poppins-regular mb-10">
         <div
           className={`absolute inset-0 transition-all duration-1000 ${sections[currentSection].background} bg-cover bg-center`}
         >
@@ -95,11 +96,11 @@ const Kynoidem = () => {
           </h1>
 
           {/* Sections Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-11/12 max-w-6xl justify-center mt-8">
+          <div className="grid grid-cols-1 gap-4 px-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 w-11/12 max-w-6xl justify-center">
             {sections.map((section, index) => (
               <div
                 key={section.id}
-                className={`p-4 md:p-6 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg rounded-lg ${
+                className={`p-4 md:p-6 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
                   index === currentSection
                     ? "bg-white transform scale-105"
                     : "bg-gray-100 opacity-75"

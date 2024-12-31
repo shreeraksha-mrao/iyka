@@ -47,7 +47,7 @@ const Yonarympei = () => {
 
         {/* Text Section */}
         <div className="md:w-2/3">
-          <p className="text-sm sm:text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
+          <p className="text-sm px-4 sm:text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
             <strong>Yonarympei</strong> is a transformative healing concept that integrates Yoga
             Therapy, Gut Health, and Nutrition to{" "}
             <strong>
@@ -65,7 +65,7 @@ const Yonarympei = () => {
         </div>
       </div>
 
-      <div className="relative h-screen w-full poppins-regular mb-8 sm:mb-10">
+      <div className="relative h-screen w-full poppins-regular  mb-8 sm:mb-10">
         <div
           className={`absolute inset-0 transition-all duration-1000 ${sections[currentSection].background} bg-cover bg-center`}
         >
@@ -73,11 +73,11 @@ const Yonarympei = () => {
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
           {/* Sections Grid */}
-          <div className="grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 w-11/12 max-w-6xl justify-center">
+          <div className="grid grid-cols-1 gap-4 px-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 w-11/12 max-w-6xl justify-center">
             {sections.map((section, index) => (
               <div
                 key={section.id}
-                className={`p-4 sm:p-6 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
+                className={`p-4  sm:p-6 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
                   index === currentSection
                     ? "bg-white transform scale-105"
                     : "bg-gray-100 opacity-75"

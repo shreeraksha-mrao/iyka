@@ -31,7 +31,7 @@ const Aiti = () => {
   return (
     <div>
       {/* Flex Container for Image and Description */}
-      <div className="flex flex-col md:flex-row items-center max-w-6xl mx-auto mt-24 px-4 md:px-0 gap-14 mb-10">
+      <div className="flex flex-col gap-6 sm:gap-14 md:flex-row items-center max-w-6xl mx-auto mt-12 sm:mt-24 px-2 sm:px-4 md:px-0 mb-8 sm:mb-10">
         {/* Image Section */}
         <div className="md:w-1/3 mb-8 md:mb-0 md:mr-8">
           <img
@@ -43,7 +43,7 @@ const Aiti = () => {
 
         {/* Text Section */}
         <div className="md:w-2/3">
-          <p className="text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
+          <p className="text-sm px-4 sm:text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
             <strong>AITI</strong> combines the ancient wisdom of Acupuncture with the modern
             techniques of Manual Therapy to{" "}
             <strong>
@@ -69,7 +69,7 @@ const Aiti = () => {
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
           {/* Sections Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-11/12 max-w-6xl justify-center">
+          <div className="grid grid-cols-1 gap-4 px-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 w-11/12 max-w-6xl justify-center">
             {sections.map((section, index) => (
               <div
                 key={section.id}

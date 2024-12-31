@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 focus:outline-none"
@@ -160,7 +160,7 @@ const Navbar = () => {
         <div
           className={`${
             mobileMenuOpen ? 'block' : 'hidden'
-          } md:hidden mt-4 pb-4`}
+          } xl:hidden mt-4 pb-4`}  // Ensure mobile menu is hidden on xl and above
         >
           <ul className="space-y-2">
             <li>

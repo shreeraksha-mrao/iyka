@@ -24,11 +24,21 @@ const EnquiryForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    toast.info('Sending your enquiry, please wait...', {
-      position: 'top-center',
-      autoClose: false,
-      toastId: 'sendingToast', // Unique ID to prevent duplicate toasts
-    });
+    // Check if the contact field contains a phone number
+    if (data.contact) {
+      toast.info('Submitting your phone enquiry, please wait...', {
+        position: 'top-center',
+        autoClose: false,
+        toastId: 'sendingPhoneToast', // Unique ID for phone toast
+        className: 'text-xs', // Smaller text for phone-related toast
+      });
+    } else {
+      toast.info('Sending your enquiry, please wait...', {
+        position: 'top-center',
+        autoClose: false,
+        toastId: 'sendingToast', // Unique ID to prevent duplicate toasts
+      });
+    }
 
     emailjs
       .sendForm(
@@ -38,7 +48,8 @@ const EnquiryForm = () => {
         '5FaW_1CWe9hGNIRti' // Replace with your EmailJS user ID
       )
       .then(() => {
-        toast.dismiss('sendingToast'); // Dismiss the "sending" toast
+        toast.dismiss('sendingToast');
+        toast.dismiss('sendingPhoneToast');
         toast.success('Your enquiry has been submitted successfully!');
         setData({
           name: '',
@@ -55,7 +66,8 @@ const EnquiryForm = () => {
         form.current.reset();
       })
       .catch(() => {
-        toast.dismiss('sendingToast'); // Dismiss the "sending" toast
+        toast.dismiss('sendingToast');
+        toast.dismiss('sendingPhoneToast');
         toast.error('An error occurred while submitting the form. Please try again.');
       });
   };
