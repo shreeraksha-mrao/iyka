@@ -49,7 +49,7 @@ const About = () => {
         </div>
 
         {/* Sections Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full sm:w-11/12 max-w-6xl px-4 sm:px-0 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full sm:w-11/12 max-w-6xl px-9 sm:px-0 justify-center">
           {sections.map((section, index) => (
             <div
               key={section.id}

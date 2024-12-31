@@ -1,29 +1,33 @@
 import React, { useRef, useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import emailjs from "emailjs-com";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for toastify
 
 const Contact = () => {
   const form = useRef();
   const [data, setData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // Replace with your Email.js service ID
-        "YOUR_TEMPLATE_ID", // Replace with your Email.js template ID
+        "service_o8eq8vd", // Replace with your Email.js service ID
+        "template_ravvacv", // Replace with your Email.js template ID
         form.current,
-        "YOUR_USER_ID" // Replace with your Email.js user ID
+        "n0-6vkUEfxf1myJQV" // Replace with your Email.js user ID
       )
       .then(
         (result) => {
-          setStatus("Message sent successfully!");
-          setData({ name: "", email: "", message: "" }); // Reset form
+          // Show success toast
+          toast.success("Message sent successfully!");
+          setData({ name: "", email: "", message: "" }); // Reset form after successful submission
         },
         (error) => {
-          setStatus("Failed to send message. Please try again later.");
+          // Show error toast
+          toast.error("Failed to send message. Please try again later.");
         }
       );
   };
@@ -46,7 +50,7 @@ const Contact = () => {
             </div>
             <div className="text ml-4">
               <h3 className="font-semibold text-base sm:text-lg">Address</h3>
-              <p className="text-sm sm:text-base">Shilong, India</p>
+              <p className="text-sm sm:text-base">Shillong, India</p>
             </div>
           </div>
 
@@ -87,7 +91,7 @@ const Contact = () => {
                 value={data.name}
                 onChange={(e) => setData({ ...data, name: e.target.value })}
                 placeholder="Full Name"
-                className=" 0 w-full py-2 border-b-2 border-black text-black text-sm sm:text-lg focus:outline-none"
+                className="w-full py-2 border-b-2 border-black text-black text-sm sm:text-lg focus:outline-none"
               />
             </div>
             <div className="inputBox mt-4">
@@ -98,7 +102,7 @@ const Contact = () => {
                 value={data.email}
                 onChange={(e) => setData({ ...data, email: e.target.value })}
                 placeholder="Email Address"
-                className=" 0 w-full py-2 border-b-2 border-black text-black text-sm sm:text-lg focus:outline-none"
+                className="w-full py-2 border-b-2 border-black text-black text-sm sm:text-lg focus:outline-none"
               />
             </div>
             <div className="inputBox mt-4">
@@ -108,7 +112,7 @@ const Contact = () => {
                 value={data.message}
                 onChange={(e) => setData({ ...data, message: e.target.value })}
                 placeholder="Message"
-                className=" 0 w-full py-2 border-b-2 border-black text-black text-sm sm:text-lg resize-none focus:outline-none"
+                className="w-full py-2 border-b-2 border-black text-black text-sm sm:text-lg resize-none focus:outline-none"
               />
             </div>
             <div className="inputBox mt-4">
@@ -119,9 +123,13 @@ const Contact = () => {
               />
             </div>
           </form>
+          {/* Status message will show after submission */}
           {status && <p className="mt-4 text-sm">{status}</p>}
         </div>
       </div>
+
+      {/* Toast container for showing success and error messages */}
+      <ToastContainer />
     </section>
   );
 };

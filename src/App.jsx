@@ -11,6 +11,9 @@ import Footer from './components/footer';
 import Gallery from './pages/gallery2';
 import Contact from './pages/contact';
 import Service from './pages/services';
+import PrivacyPolicy from './pages/privacypolicy';
+import RefundCancellationPolicy from './pages/refund';
+import TermsAndConditions from './pages/terms';
 
 const App = () => {
   return (
@@ -25,6 +28,9 @@ const App = () => {
         <Route path="/gallery" element={<Gallery />}/>
         <Route path="/contact" element={<Contact />}/>
         <Route path="/service" element={<Service />}/>
+        <Route path="/privacy" element={<PrivacyPolicy />}/>
+        <Route path="/refundPolicy" element={<RefundCancellationPolicy />}/>
+        <Route path="/terms" element={<TermsAndConditions />}/>
       </Routes>
       <Footer />
     </Router>

@@ -26,7 +26,11 @@ const BookNow = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-white mb-36">
+    <div className="flex flex-col items-center justify-center bg-white mb-36">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-4 p-2 px-16 text-center sm:p-6">
+        Reserve Your <span class="text-[#49602f]">Spot Today</span>
+      </h2>
+
       <ToastContainer />
       <div
         className="flex flex-col md:flex-row items-center p-6 rounded-lg shadow-lg space-y-4 md:space-y-0 md:space-x-4"
