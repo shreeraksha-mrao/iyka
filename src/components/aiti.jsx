@@ -23,25 +23,22 @@ const Aiti = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSection((prev) => (prev + 1) % sections.length);
-    }, 5000); // Auto-scroll every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
-      {/* Flex Container for Image and Description */}
       <div className="flex flex-col gap-6 sm:gap-14 md:flex-row items-center max-w-6xl mx-auto mt-12 sm:mt-24 px-2 sm:px-4 md:px-0 mb-8 sm:mb-10">
-        {/* Image Section */}
         <div className="md:w-1/3 mb-8 md:mb-0 md:mr-8">
           <img
-            src="/images/a.png" // Replace with your desired image path
+            src="/images/a.png"
             alt="AITI Therapy"
             className="shadow-md w-full object-cover"
           />
         </div>
 
-        {/* Text Section */}
         <div className="md:w-2/3">
           <p className="text-sm px-4 sm:text-lg text-gray-700 leading-relaxed poppins-regular text-justify">
             <strong>AITI</strong> combines the ancient wisdom of Acupuncture with the modern
@@ -68,12 +65,11 @@ const Aiti = () => {
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-          {/* Sections Grid */}
-          <div className="grid grid-cols-1 gap-4 px-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 w-11/12 max-w-6xl justify-center">
+          <div className="grid grid-cols-1 gap-8 px-6 w-11/12 max-w-6xl mx-auto">
             {sections.map((section, index) => (
               <div
                 key={section.id}
-                className={`p-6 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
+                className={`p-8 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg max-w-4xl mx-auto w-full ${
                   index === currentSection ? "bg-white transform scale-105" : "bg-gray-100 opacity-75"
                 }`}
               >

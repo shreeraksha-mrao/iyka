@@ -12,7 +12,7 @@ const sections = [
     id: "acupressure",
     title: "Acupressure",
     description:
-      "Acupressure applies pressure on specific points on the body, improving circulation and relieving stress. This method enhances sleep quality and helps balance the body’s energy flow, aiding in natural sleep regulation.",
+      "Acupressure applies pressure on specific points on the body, improving circulation and relieving stress. This method enhances sleep quality and helps balance the body's energy flow, aiding in natural sleep regulation.",
     background: "bg-[url('/images/ac1.jpg')]",
   },
   {
@@ -37,25 +37,22 @@ const Kynoidem = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSection((prev) => (prev + 1) % sections.length);
-    }, 5000); // Auto-scroll every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
-      {/* Flex Container for Image and Description */}
       <div className="flex flex-col gap-6 sm:gap-14 md:flex-row items-center max-w-6xl mx-auto mt-12 sm:mt-24 px-2 sm:px-4 md:px-0 mb-8 sm:mb-10">
-        {/* Image Section */}
         <div className="md:w-1/3 mb-8 md:mb-0 md:mr-8">
           <img
-            src="/images/k.png" // Replace with your image path
+            src="/images/k.png"
             alt="Kynoidem Concept"
             className="shadow-md w-full object-cover rounded-lg"
           />
         </div>
 
-        {/* Text Section */}
         <div className="md:w-2/3">
           <p className="text-sm sm:text-lg px-4 text-gray-700 leading-relaxed poppins-regular text-justify">
             <strong>Kynoidem</strong> is an integrative sleep medicine concept focused on improving
@@ -83,38 +80,34 @@ const Kynoidem = () => {
         </div>
       </div>
 
-      {/* Background Image & Sections */}
-      <div className="relative lg:h-[75vh] w-full poppins-regular mb-10">
+      <div className="relative h-screen w-full poppins-regular mb-10">
         <div
           className={`absolute inset-0 transition-all duration-1000 ${sections[currentSection].background} bg-cover bg-center`}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight px-4 md:px-10">
-            KYNOIDEM: Restoring the Power of Sleep
-          </h1>
-
-          {/* Sections Grid */}
-          <div className="grid grid-cols-1 gap-4 px-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 w-11/12 max-w-6xl justify-center">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center py-8">
+          <div className="grid grid-cols-1 gap-3 px-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 w-11/12 max-w-6xl overflow-y-auto max-h-[80vh] lg:max-h-full lg:overflow-visible">
             {sections.map((section, index) => (
               <div
                 key={section.id}
-                className={`p-4 md:p-6 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
+                className={`p-3 md:p-6 border text-xs transition-transform duration-300 flex flex-col justify-center items-center shadow-lg ${
                   index === currentSection
                     ? "bg-white transform scale-105"
                     : "bg-gray-100 opacity-75"
+                } ${
+                  section.id === "vr-headsets" ? "lg:col-span-3 lg:w-full lg:mx-auto" : ""
                 }`}
               >
                 <h2
-                  className={`text-lg md:text-xl font-semibold mb-3 ${
+                  className={`text-base md:text-xl font-semibold mb-2 md:mb-3 ${
                     index !== currentSection ? "text-gray-700" : "text-black"
                   }`}
                 >
                   {section.title}
                 </h2>
                 {index === currentSection && (
-                  <p className="text-sm md:text-base text-center text-gray-800">
+                  <p className="text-xs md:text-base text-center text-gray-800">
                     {section.description}
                   </p>
                 )}
@@ -126,7 +119,7 @@ const Kynoidem = () => {
           {sections.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-colors duration-300 ${
+              className={`w-2 h-2 md:w-4 md:h-4 rounded-full transition-colors duration-300 ${
                 index === currentSection ? "bg-white" : "bg-gray-500"
               }`}
               onClick={() => setCurrentSection(index)}
