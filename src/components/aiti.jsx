@@ -64,24 +64,24 @@ const Aiti = () => {
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
-          <div className="grid grid-cols-1 gap-8 px-6 w-11/12 max-w-6xl mx-auto">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center py-8">
+          <div className="grid grid-cols-1 gap-4 sm:gap-8 px-4 sm:px-6 w-11/12 max-w-6xl mx-auto overflow-y-auto max-h-[80vh] lg:max-h-full lg:overflow-visible">
             {sections.map((section, index) => (
               <div
                 key={section.id}
-                className={`p-8 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg max-w-4xl mx-auto w-full ${
+                className={`p-4 sm:p-8 border transition-transform duration-300 flex flex-col justify-center items-center shadow-lg max-w-4xl mx-auto w-full ${
                   index === currentSection ? "bg-white transform scale-105" : "bg-gray-100 opacity-75"
                 }`}
               >
                 <h2
-                  className={`text-xl font-semibold mb-4 ${
+                  className={`text-lg sm:text-xl font-semibold mb-3 sm:mb-4 ${
                     index !== currentSection ? "text-gray-700" : "text-black"
                   }`}
                 >
                   {section.title}
                 </h2>
                 {index === currentSection && (
-                  <p className="text-sm text-center text-gray-800">{section.description}</p>
+                  <p className="text-xs sm:text-sm text-center text-gray-800">{section.description}</p>
                 )}
               </div>
             ))}
@@ -91,7 +91,7 @@ const Aiti = () => {
           {sections.map((_, index) => (
             <button
               key={index}
-              className={`w-4 h-4 rounded-full transition-colors duration-300 ${
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-colors duration-300 ${
                 index === currentSection ? "bg-white" : "bg-gray-500"
               }`}
               onClick={() => setCurrentSection(index)}
