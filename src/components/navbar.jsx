@@ -43,7 +43,7 @@ const Navbar = () => {
             <span>IYKA-ARAM</span>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button (only visible on screens 1200px and below) */}
           <div className="xl:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -57,8 +57,8 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-8 text-gray-800 poppins-regular items-center">
+          {/* Desktop Menu (only visible on screens above 1200px) */}
+          <ul className="hidden xl:flex space-x-8 text-gray-800 poppins-regular items-center">
             <li>
               <Link to="/" className="hover:text-[#f8af4b] transition duration-300">
                 Home
@@ -156,11 +156,9 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu (only visible on screens 1200px and below) */}
         <div
-          className={`${
-            mobileMenuOpen ? 'block' : 'hidden'
-          } xl:hidden mt-4 pb-4`}  // Ensure mobile menu is hidden on xl and above
+          className={`${mobileMenuOpen ? 'block' : 'hidden'} xl:hidden mt-4 pb-4`}
         >
           <ul className="space-y-2">
             <li>
