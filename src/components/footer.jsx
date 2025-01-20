@@ -26,8 +26,8 @@ const Footer = () => {
             </a>
             {/* Add other social media icons as needed */}
           </div>
-          <p className="text-sm mb-2">Contact Us: <a href="tel:7625043800" className="hover:underline hover:text-gray-300 transition-colors duration-300">7625043800</a></p>
-          <p className="text-sm mb-2">Enquiry: <a href="tel:8047645555" className="hover:underline hover:text-gray-300 transition-colors duration-300">8047645555</a></p>
+          <p className="text-sm mb-2">Contact Us: <a href="tel:6009696208" className="hover:underline hover:text-gray-300 transition-colors duration-300">6009696208</a></p>
+          <p className="text-sm mb-2">Enquiry: <a href="tel:6009696208" className="hover:underline hover:text-gray-300 transition-colors duration-300">6009696208</a></p>
           <p className="text-sm">Mail: <a href="mailto:info@iyka-aram.com" className="hover:underline hover:text-gray-300 transition-colors duration-300">yonawellnessandhealthcare@gmail.com</a></p>
         </div>
 
